@@ -11,7 +11,7 @@
             eleMap: {}
         };
     $.fn[pluginMethodsName] = function (method) {
-        // Method calling logic
+        //  Method calling logic
         if (methods[method]) {
             return methods[method].apply(this, Array.prototype.slice.call(arguments, 1));
         } else if (typeof method === "object" || !method) {
