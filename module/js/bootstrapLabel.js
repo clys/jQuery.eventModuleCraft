@@ -1,5 +1,5 @@
-jQueryModuleCraftConfig = typeof jQueryModuleCraftConfig === "undefined" ? {} : jQueryModuleCraftConfig;
-jQueryModuleCraftConfig = $.extend(jQueryModuleCraftConfig, {
+jQueryEventModuleCraftConfig = typeof jQueryEventModuleCraftConfig === "undefined" ? {} : jQueryEventModuleCraftConfig;
+jQueryEventModuleCraftConfig = $.extend(jQueryEventModuleCraftConfig, {
     bootstrapLabel: {
         tpl: '<div class="clearfix"> \
         {%var aData;%} \
@@ -26,7 +26,7 @@ jQueryModuleCraftConfig = $.extend(jQueryModuleCraftConfig, {
 
         },
         disable: function (status) {
-            $(this).find(jQueryModuleCraftConfig.bootstrapLabel.callbackSelector).attr("disabled", status);
+            $(this).find(jQueryEventModuleCraftConfig.bootstrapLabel.callbackSelector).attr("disabled", status);
         }
     }
 });

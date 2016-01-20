@@ -128,7 +128,7 @@
     }
 
     function getConfig(moduleName) {
-        var config = jQueryModuleCraftConfig[moduleName];
+        var config = jQueryEventModuleCraftConfig[moduleName];
         if (utils.object.isNull(config)) {
             return null;
         }
