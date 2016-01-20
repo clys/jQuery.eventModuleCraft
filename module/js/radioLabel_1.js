@@ -1,3 +1,22 @@
+//$("").eventModuleCraft({
+//    //使用的模块
+//    module: "radioLabel_1",
+//    //生成html的输入数据
+//    "data": {data:
+//        [
+//            {"key": "a", "val": "a"},
+//            {"key": "b", "val": "b"},
+//            {"key": "c", "val": "c"},
+//            {"key": "d", "val": "d "},
+//            {"key": "e", "val": "e"},
+//            {"key": "f", "val": "f"}
+//        ]
+//    },
+//    //回调
+//    "callback": function (e, key, val) {
+//        console.log(e, key, val);
+//    }
+//});
 jQueryEventModuleCraftConfig = typeof jQueryEventModuleCraftConfig === "undefined" ? {} : jQueryEventModuleCraftConfig;
 jQueryEventModuleCraftConfig = $.extend(jQueryEventModuleCraftConfig, {
     radioLabel_1: {
