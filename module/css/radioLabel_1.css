@@ -1,0 +1,26 @@
+.radio-label_1 a.current {
+    background: url(../img/icon_current.png) right bottom no-repeat #FFF;
+    border: 2px solid #3198E0;
+    color: #3198E0;
+    float: left;
+    display: block;
+}
+
+.radio-label_1 a {
+    line-height: 20px;
+    background: #FFF;
+    font-size: 14px;
+    float: left;
+    display: inline-block;
+    margin: 0 10px 5px 0;
+    color: #373737;
+    border: 2px solid #E0E0E0;
+    padding: 5px 10px;
+    border-radius: 4px;
+    cursor: pointer;
+}
+
+.radio-label_1 a:hover {
+    border: 2px solid #93d4fc;
+    color: #0e88f5;
+}

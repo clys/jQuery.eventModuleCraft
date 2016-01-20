@@ -20,8 +20,7 @@ DomeWebController = {
     },
     inits: {
         element: function () {
-            DomeWebController.setEle("$data",$("#show_data_1"));
-            $("#dome").eventModuleCraft({
+            $("#bootstrapLabel [key=dome]").eventModuleCraft({
                 //使用的模块
                 module: "bootstrapLabel",
                 //生成html的输入数据
@@ -38,7 +37,27 @@ DomeWebController = {
                 //回调
                 "callback": function (e, key, val) {
                     console.log(e, key, val);
-                    DomeWebController.getEle("$data").html("e:"+ e+"<br/>name:"+key+"<br/>val:"+val);
+                    $("#bootstrapLabel [key=data]").html("e:"+ e+"<br/>name:"+key+"<br/>val:"+val);
+                }
+            });
+            $("#radio_label_1 [key=dome]").eventModuleCraft({
+                //使用的模块
+                module: "radioLabel_1",
+                //生成html的输入数据
+                "data": {data:
+                    [
+                        {"key": "a", "val": "a"},
+                        {"key": "b", "val": "b"},
+                        {"key": "c", "val": "c"},
+                        {"key": "d", "val": "d "},
+                        {"key": "e", "val": "e"},
+                        {"key": "f", "val": "f"}
+                    ]
+                },
+                //回调
+                "callback": function (e, key, val) {
+                    console.log(e, key, val);
+                    $("#radio_label_1 [key=data]").html("e:"+ e+"<br/>name:"+key+"<br/>val:"+val);
                 }
             });
         },

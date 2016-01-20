@@ -6,9 +6,10 @@
     <link rel="stylesheet" href="http://cdn.bootcss.com/bootstrap/3.3.5/css/bootstrap.min.css">
     <link rel="stylesheet" href="static/css/docs.min.css">
     <link rel="stylesheet" href="static/css/github.css">
-
+    <link rel="stylesheet" href="../module/css/radioLabel_1.css">
     <script src="http://cdn.bootcss.com/jquery/1.11.3/jquery.min.js"></script>
     <script src="http://cdn.bootcss.com/bootstrap/3.3.5/js/bootstrap.min.js"></script>
+    <script type="text/javascript" src="../module/js/radioLabel_1.js"></script>
     <script type="text/javascript" src="../module/js/bootstrapLabel.js"></script>
     <script type="text/javascript" src="../jQuery.eventModuleCraft.js"></script>
     <script type="text/javascript" src="static/js/dome.js"></script>
@@ -19,7 +20,7 @@
 
 <div class="bs-docs-header" id="content" tabindex="-1">
     <div class="container">
-        <h1>jquery.moduleCraft</h1>
+        <h1>jQuery.eventModuleCraft.js</h1>
         <p>使用不同的模块，产生不同的用法</p>
     </div>
 </div>
@@ -28,11 +29,11 @@
     <div class="row">
         <div class="col-md-12">
             <h1 class="page-header"><a class="anchorjs-link " style="font-family: anchorjs-icons; font-style: normal; font-variant: normal; font-weight: normal; position: absolute; margin-left: -1em; padding-right: 0.5em;"></a>使用方法</h1>
-                在使用前先引入模块文件，入参"data"的具体数据因模块而异
+                在使用前先引入模块文件，入参的具体数据因模块而异
 
             <h2>初始化:</h2>
             <div class="highlight"><pre>
-                  <code>$("#dome").moduleCraft({
+                  <code>$("#dome").eventModuleCraft({
     //使用的模块
     module: "bootstrapLabel",
     //生成html的输入数据
@@ -55,25 +56,28 @@
 
             <h2>触发一个元素</h2>
             <div class="highlight"><pre>
-                  <code>$("#dome").moduleCraft("trigger",key)</code></pre>
+                  <code>$("#dome").eventModuleCraft("trigger",key)</code></pre>
             </div>
 
             <h2>切换禁用</h2>
             <div class="highlight"><pre>
-                  <code>$("#dome").moduleCraft("disable"[,true/false])</code></pre>
+                  <code>$("#dome").eventModuleCraft("disable"[,true/false])</code></pre>
             </div>
         </div>
     </div>
     <div class="row">
         <div class="col-md-12">
             <h1 class="page-header"><a class="anchorjs-link " style="font-family: anchorjs-icons; font-style: normal; font-variant: normal; font-weight: normal; position: absolute; margin-left: -1em; padding-right: 0.5em;"></a>演示</h1>
-            <div class="highlight"><span id="show_data_1" style="word-break: break-all; word-wrap:break-word;"></span>
+            <span><b>bootstrapLabel</b></span>
+            <div id="bootstrapLabel" class="highlight">
+                <div key="dome"></div>
+                <span key="data" style="word-break: break-all; word-wrap:break-word;"></span>
             </div>
-        </div>
-    </div>
-    <div class="row">
-        <div class="col-md-12">
-            <div id="dome"></div>
+            <span><b>radioLabel_1</b></span>
+            <div id="radio_label_1" class="highlight">
+                <div key="dome"></div>
+                <span key="data" style="word-break: break-all; word-wrap:break-word;"></span>
+            </div>
         </div>
     </div>
 </div>
