@@ -1,8 +1,8 @@
 (function ($) {
     var versions = "1.0",
-        pluginName = "jQuery.moduleCraft",
-        pluginMethodsName = "moduleCraft",
-        pluginEleTagName = "module-craft-tag",
+        pluginName = "jQuery.eventModuleCraft",
+        pluginMethodsName = "eventModuleCraft",
+        pluginEleTagName = "event-module-craft-tag",
         methods = {},
         pool = {
             defaultParam: {
