@@ -21,7 +21,7 @@ DomeWebController = {
     inits: {
         element: function () {
             DomeWebController.setEle("$data",$("#show_data_1"));
-            $("#dome").moduleCraft({
+            $("#dome").eventModuleCraft({
                 //使用的模块
                 module: "bootstrapLabel",
                 //生成html的输入数据
