@@ -9,6 +9,7 @@
 //                        "key": "键",
 //                        "url": "链接",
 //                        "exAttr": "给标签其他属性",
+//                        "open": 是否展开true/false,
 //                        "list": [
 //                            {
 //                                "title": "显示文本",
@@ -19,7 +20,7 @@
 //                        ]
 //                    }
 //                ],
-//                    "linkage": "菜单是否联动(手风琴) true/false"
+//                    "linkage": 菜单是否联动(手风琴) true/false
 //                }
 //});
 
@@ -38,7 +39,7 @@ jQueryEventModuleCraftConfig = $.extend(jQueryEventModuleCraftConfig, {
                                 </a>\
                             </h4>\
                         </div>\
-                        <div data-navig-id="collapse{%=i%}" class="panel-collapse collapse">\
+                        <div data-navig-id="collapse{%=i%}" class="panel-collapse collapse{%=aData[\'open\'] == true ?\' in\':\'\'%}">\
                             <div class="panel-body">\
                                 <div class="content-cta list-group" style="margin: -15px">\
                 {%for (var k = 0, leng = list.length, item; k < leng; k++) {%}\

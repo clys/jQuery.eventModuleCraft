@@ -72,6 +72,7 @@ DomeWebController = {
                         {
                             "title": "一",
                             "key": "一",
+                            "open": true,
                             "list": [
                                 {
                                     "title": "1",
