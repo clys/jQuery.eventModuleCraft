@@ -158,7 +158,8 @@
                 var config = getConfig(eleObj.param['module']);
                 if (utils.object.isNull(config)) return true;
                 if (config['buildBefore']) param = config['buildBefore'].apply(this, [param]) || param;
-                $currentEle.html(utils.string.buildTpl(config['tpl'], param.data)).on(config['callbackEvent'], config['callbackSelector'], callback);
+                $currentEle.html(utils.string.buildTpl(config['tpl'], param.data));
+                if (utils.string.isNotEmpty(config['callbackEvent'])) $currentEle.on(config['callbackEvent'], config['callbackSelector'], callback);
                 if (config['buildAfter']) config['buildAfter'].apply(this, [param]);
             })
         },
