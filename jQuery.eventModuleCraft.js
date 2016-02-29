@@ -161,7 +161,8 @@
                 $currentEle.html(pool.utils.string.buildTpl(config['tpl'], param.data));
                 if (pool.utils.string.isNotEmpty(config['callbackEvent'])) $currentEle.on(config['callbackEvent'], config['callbackSelector'], callback);
                 if (config['buildAfter']) config['buildAfter'].apply(this, [param,pool]);
-            })
+            });
+            return this;
         },
         disable: function (status) {
             var $ele = $(this);
@@ -173,7 +174,8 @@
                 if (pool.utils.object.isNull(config)) return true;
                 eleObj.param.disabled = typeof status === "boolean" ? status : !eleObj.param.disabled;
                 if (config['disable']) config['disable'].apply(this, [eleObj.param.disabled,pool]);
-            })
+            });
+            return this;
         },
         trigger: function (key) {
             var $ele = $(this);
@@ -188,7 +190,8 @@
                     callback.apply($targetEle, ['code.trigger']);
                 }
 
-            })
+            });
+            return this;
         },
         ver: function () {
             return pool.versions;
