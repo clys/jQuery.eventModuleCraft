@@ -124,12 +124,6 @@
         return updateEleObj;
     }
 
-    function removeEleObj(eleObj) {
-        var uid = getAttrVal(eleObj.ele, pool.pluginEleTagName);
-        delete pool.eleMap[uid];
-        return removeEleObj;
-    }
-
     function getAttrVal(ele, attrName) {
         var $ele = $(ele);
         return $ele.attr(attrName) || $ele.parents('[' + attrName + ']:first').attr(attrName);
