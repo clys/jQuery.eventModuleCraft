@@ -1,6 +1,6 @@
 (function ($) {
     var pool = {
-        versions: "1.0",
+        versions: "1.2",
         pluginMethodsName: "eventModuleCraft",
         pluginName: "jQuery.eventModuleCraft",
         pluginEleTagName: "event-module-craft-tag",
@@ -110,6 +110,14 @@
         return pool.eleMap[uid];
     }
 
+    function removeEleObj(ele){
+        var uid = getAttrVal(ele, pool.pluginEleTagName);
+        if (pool.utils.string.isEmpty(uid)) {
+            return null;
+        }
+        delete pool.eleMap[uid];
+    }
+
     function updateEleObj(eleObj) {
         var uid = getAttrVal(eleObj.ele, pool.pluginEleTagName);
         pool.eleMap[uid] = eleObj;
@@ -159,8 +167,16 @@
                 if (pool.utils.object.isNull(config)) return true;
                 if (config['buildBefore']) param = config['buildBefore'].apply(this, [param,pool]) || param;
                 $currentEle.html(pool.utils.string.buildTpl(config['tpl'], param.data));
-                if (pool.utils.string.isNotEmpty(config['callbackEvent'])) $currentEle.on(config['callbackEvent'], config['callbackSelector'], callback);
+                if (pool.utils.string.isNotEmpty(config['callbackEvent'])) $currentEle.unbind(config['callbackEvent']).on(config['callbackEvent'], config['callbackSelector'], callback);
                 if (config['buildAfter']) config['buildAfter'].apply(this, [param,pool]);
+            });
+            return this;
+        },
+        remove:function(){
+            var $ele = $(this);
+            $ele.each(function () {
+                var $currentEle = $(this);
+                removeEleObj($currentEle);
             });
             return this;
         },
