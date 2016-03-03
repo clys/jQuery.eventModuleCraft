@@ -1,0 +1,66 @@
+/*---左侧菜单---*/
+ul.yt-nav ,ul.yt-nav ul{
+    margin: 0;
+    padding: 0;
+    list-style: none;
+}
+
+/*基础字体*/
+.yt-nav a{
+    display: block;
+    padding: 1px 0 1px 8px;
+    color: #333;
+}
+
+/*菜单边距*/
+.yt-nav li{
+    padding: 8px 0 8px 20px;
+}
+
+/*鼠标放上*/
+.yt-nav a:hover{
+    color: #eb5955;
+}
+
+/*标题字体*/
+.yt-nav>li>a{
+    font-size: 16px;
+}
+
+/*标题图标*/
+.yt-nav>li>a .glyphicon{
+    color: #999;
+    font-size: 12px;
+}
+
+/*标题图标非活动显示向右*/
+.yt-nav>li>a .glyphicon-triangle-right{
+    display: inline-block;
+}
+.yt-nav>li>a .glyphicon-triangle-bottom{
+    display: none;
+}
+
+/*标题图标活动显示向下*/
+.yt-nav>li.active>a .glyphicon-triangle-right{
+    display: none;
+}
+.yt-nav>li.active>a .glyphicon-triangle-bottom{
+    display: inline-block;
+}
+
+/*活动的子菜单*/
+.yt-nav>li.active>ul{
+    display: block;
+}
+
+/*子菜单默认隐藏*/
+.yt-nav>li>ul{
+    display: none;
+}
+
+/*活动子标题*/
+.yt-nav>li>ul .active>a{
+    color: #eb5955;
+    border-left: 4px solid #eb5955;
+}
