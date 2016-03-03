@@ -110,7 +110,7 @@
         return pool.eleMap[uid];
     }
 
-    function removeEleObj(ele){
+    function removeEleObj(ele) {
         var uid = getAttrVal(ele, pool.pluginEleTagName);
         if (pool.utils.string.isEmpty(uid)) {
             return null;
@@ -143,9 +143,9 @@
             key = getAttrVal(this, config['keyAttrName']),
             val = getAttrVal(this, config['valAttrName']);
         if (eleObj.param.disabled) return;
-        if (config['callbackBefore']) config['callbackBefore'].apply(this, [e, key, val,pool]);
-        if (eleObj.param.callback) eleObj.param.callback.apply(this, [e, key, val,pool]);
-        if (config['callbackAfter']) config['callbackAfter'].apply(this, [e, key, val,pool]);
+        if (config['callbackBefore']) config['callbackBefore'].apply(this, [e, key, val, eleObj.param, pool]);
+        if (eleObj.param.callback) eleObj.param.callback.apply(this, [e, key, val, eleObj.param, pool]);
+        if (config['callbackAfter']) config['callbackAfter'].apply(this, [e, key, val, eleObj.param, pool]);
     }
 
     /* public methods ------------------------------------------------------- */
@@ -159,14 +159,14 @@
                 if (!eleObj) return true;
                 var config = getConfig(eleObj.param['module']);
                 if (pool.utils.object.isNull(config)) return true;
-                if (config['buildBefore']) param = config['buildBefore'].apply(this, [param,pool]) || param;
+                if (config['buildBefore']) param = config['buildBefore'].apply(this, [param, pool]) || param;
                 $currentEle.html(pool.utils.string.buildTpl(config['tpl'], param.data));
                 if (pool.utils.string.isNotEmpty(config['callbackEvent'])) $currentEle.unbind(config['callbackEvent']).on(config['callbackEvent'], config['callbackSelector'], callback);
-                if (config['buildAfter']) config['buildAfter'].apply(this, [param,pool]);
+                if (config['buildAfter']) config['buildAfter'].apply(this, [param, pool]);
             });
             return this;
         },
-        remove:function(){
+        remove: function () {
             var $ele = $(this);
             $ele.each(function () {
                 var $currentEle = $(this);
@@ -183,7 +183,7 @@
                 var config = getConfig(eleObj.param['module']);
                 if (pool.utils.object.isNull(config)) return true;
                 eleObj.param.disabled = typeof status === "boolean" ? status : !eleObj.param.disabled;
-                if (config['disable']) config['disable'].apply(this, [eleObj.param.disabled,pool]);
+                if (config['disable']) config['disable'].apply(this, [eleObj.param.disabled, pool]);
             });
             return this;
         },
