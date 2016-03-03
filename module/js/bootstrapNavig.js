@@ -27,7 +27,7 @@
 jQueryEventModuleCraftConfig = typeof jQueryEventModuleCraftConfig === "undefined" ? {} : jQueryEventModuleCraftConfig;
 jQueryEventModuleCraftConfig = $.extend(jQueryEventModuleCraftConfig, {
     bootstrapNavig: {
-        tpl:'\
+        tpl: '\
             {%for (var i = 0, len = data.length, aData, list, leng; i < len; i++) {%}\
                 {%aData = data[i];%}\
                 {%list = aData[\'list\'];%}\
@@ -59,19 +59,19 @@ jQueryEventModuleCraftConfig = $.extend(jQueryEventModuleCraftConfig, {
         callbackSelector: "a",
         keyAttrName: "data-key",
         valAttrName: "href",
-        callbackBefore: function (e, key, val,pool) {
+        callbackBefore: function (e, key, val, param, pool) {
         },
-        callbackAfter: function (e, key, val,pool) {
+        callbackAfter: function (e, key, val, param, pool) {
         },
-        buildBefore: function (param,pool) {
+        buildBefore: function (param, pool) {
         },
-        buildAfter: function (param,pool) {
+        buildAfter: function (param, pool) {
             var $ele = $(this),
                 tag = $ele.attr(pool.pluginEleTagName);
             $ele.addClass('panel-group');
-            if(param.data.linkage == true) $ele.find('[data-toggle="collapse"]').attr('data-parent','['+pool.pluginEleTagName+'=\''+tag+'\']');
+            if (param.data.linkage == true) $ele.find('[data-toggle="collapse"]').attr('data-parent', '[' + pool.pluginEleTagName + '=\'' + tag + '\']');
         },
-        disable: function (status,pool) {
+        disable: function (status, pool) {
         }
     }
 });
