@@ -1,5 +1,5 @@
 //$("").eventModuleCraft({
-//    //使用的模块
+//     //使用的模块
 //    module: "bootstrapLabel",
 //    //生成html的输入数据
 //    "data": {data:
