@@ -14,7 +14,7 @@
                 buoyUID: 0
             },
             getUID: function () {
-                return (new Date()).getMilliseconds() + pool.utils.pool.buoyUID++;
+                return ''+(new Date()).getMilliseconds() + pool.utils.pool.buoyUID++;
             },
             object: {
                 isNull: function (obj) {
