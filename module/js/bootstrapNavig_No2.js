@@ -72,23 +72,24 @@ jQueryEventModuleCraftConfig = $.extend(jQueryEventModuleCraftConfig, {
             }
             if ($ul.size() > 0) {
                 if ($li.hasClass('active')) {
-                    $ul.slideUp('fast',function(){
+                    $ul.slideUp('fast', function () {
                         $li.removeClass('active');
                     });
                 } else {
-                    $ul.slideDown('fast',function(){
+                    $ul.slideDown('fast', function () {
                         $li.addClass('active');
                     });
                     if (param.data['linkage'] == true) {
                         var $lisi = $li.siblings('.active');
-                        $lisi.find('>ul').slideUp('fast',function(){
+                        $lisi.find('>ul').slideUp('fast', function () {
                             $(this).parents('li:eq(0)').removeClass('active');
                         });
                     }
                 }
             } else {
-                $li.addClass('active').siblings().removeClass('active');
                 var $pli = $li.parents('li:eq(0)');
+                if ($pli.size() == 0) return;
+                $li.addClass('active').siblings().removeClass('active');
                 if (!$pli.hasClass('active')) {
                     jQueryEventModuleCraftConfig.bootstrapNavig_No2.callbackBefore.apply($pli.find('>a'), [e, key, val, param, pool])
                 }
